@@ -94,6 +94,29 @@ namespace ConsoleApp2
 
             printlist(List);
         }
+
+        private int min;
+        /// <summary>
+        /// 选择排序
+        /// </summary>
+        /// <param name="List"></param>
+        public void Sort2(int[] List)
+        {
+            for (int i = 0; i < List.Length - 1; ++i)
+            {
+                min = i;
+                for (int j = i + 1; j < List.Length; ++j)
+                {
+                    if (List[j] < List[min])
+                        min = j;
+                }
+                int t = List[min];
+                List[min] = List[i];
+                List[i] = t;
+            }
+
+            printlist(List);
+        }
     }
 
     //主类
@@ -109,7 +132,9 @@ namespace ConsoleApp2
             string abc = A.ss();
 
             //B.BubbleSort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
-            B.Sort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
+            //B.Sort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
+
+            B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
 
             Console.ReadKey();
 
