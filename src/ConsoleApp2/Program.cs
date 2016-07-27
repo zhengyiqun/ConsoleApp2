@@ -42,7 +42,6 @@ namespace ConsoleApp2
                 Console.Write(s + ",");
             }
             Console.WriteLine();
-
         }
 
         /// <summary>
