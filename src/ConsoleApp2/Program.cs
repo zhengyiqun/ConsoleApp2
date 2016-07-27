@@ -95,13 +95,15 @@ namespace ConsoleApp2
             printlist(List);
         }
 
-        private int min;
+        
         /// <summary>
         /// 选择排序
         /// </summary>
         /// <param name="List"></param>
         public void Sort2(int[] List)
         {
+            int min;
+
             for (int i = 0; i < List.Length - 1; ++i)
             {
                 min = i;
