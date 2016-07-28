@@ -20,7 +20,7 @@ namespace ConsoleApp2
         public abstract string ss();
     };
 
-    //b类继承了a类
+    //继承a类
     public class b : a {
         //父类抽象方法的实现
         public override string ss()
@@ -34,7 +34,7 @@ namespace ConsoleApp2
         /// <summary>
         /// 打印数组
         /// </summary>
-        /// <param name="list">int[]</param>
+        /// <param name="List"></param>
         private void printlist(int[] List) {
 
             foreach (int s in List.ToList())
@@ -95,11 +95,10 @@ namespace ConsoleApp2
             printlist(List);
         }
 
-        
         /// <summary>
         /// 选择排序
         /// </summary>
-        /// <param name="List"></param>
+        /// <param name="List">int[]</param>
         public void Sort2(int[] List)
         {
             int min;
