@@ -3,8 +3,7 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "Microsoft.EntityFrameworkCore": "1.0.0",
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0"
+    "Pomelo.EntityFrameworkCore.MySql": "1.0.0-prerelease-20160726"
   },
 
   "frameworks": {

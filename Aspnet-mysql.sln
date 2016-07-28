@@ -10,9 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConsoleApp2", "src\ConsoleApp2\ConsoleApp2.xproj", "{464B2C29-32AA-4683-A51D-2BCA2B5C5E7B}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestProject", "src\ConsoleApp2\TestProject.xproj", "{464B2C29-32AA-4683-A51D-2BCA2B5C5E7B}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MysqlEntityFarmework", "src\MysqlEntityFarmework\MysqlEntityFarmework.xproj", "{3894D5F3-8265-4316-915E-D2C2F25C506E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "aspnet-mysql", "src\aspnet-mysql\aspnet-mysql.xproj", "{2F9D030E-CDE7-467F-B229-AFD2D4363F4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,10 @@ Global
 		{3894D5F3-8265-4316-915E-D2C2F25C506E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3894D5F3-8265-4316-915E-D2C2F25C506E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3894D5F3-8265-4316-915E-D2C2F25C506E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F9D030E-CDE7-467F-B229-AFD2D4363F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9D030E-CDE7-467F-B229-AFD2D4363F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9D030E-CDE7-467F-B229-AFD2D4363F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9D030E-CDE7-467F-B229-AFD2D4363F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,5 +41,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{464B2C29-32AA-4683-A51D-2BCA2B5C5E7B} = {AD90C93E-4127-49A0-8425-B88CD0834A08}
 		{3894D5F3-8265-4316-915E-D2C2F25C506E} = {AD90C93E-4127-49A0-8425-B88CD0834A08}
+		{2F9D030E-CDE7-467F-B229-AFD2D4363F4E} = {AD90C93E-4127-49A0-8425-B88CD0834A08}
 	EndGlobalSection
 EndGlobal
