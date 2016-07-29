@@ -9,5 +9,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MysqlEntityFarmework
 {
-    public class MyContext:DbContext{ }
+    public class MyContext : DbContext
+    {
+        public MyContext(DbContextOptions options) : base(options) {
+
+        }
+
+        
+    }
 }
