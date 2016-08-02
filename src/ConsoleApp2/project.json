@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true
@@ -8,7 +8,14 @@
     "Microsoft.NETCore.App": {
       "type": "platform",
       "version": "1.0.0"
-    }
+    },
+    "MysqlEntityFarmework": "1.0.0-*",
+    "Pomelo.EntityFrameworkCore.MySql": "1.0.0-prerelease-20160726",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.0.0",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+    "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0"
   },
 
   "frameworks": {

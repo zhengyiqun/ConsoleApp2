@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace MysqlEntityFarmework
 {
     public class MyContext : DbContext
     {
-        public MyContext(DbContextOptions options) : base(options) {
-
+        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        {
+            builder.UseMySql("Server=xianggang.cloudapp.net;database=mydb;uid=root;pwd=zheng123!;");
         }
 
-        
+        public DbSet<Blog> Blogs { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
+
+
 }

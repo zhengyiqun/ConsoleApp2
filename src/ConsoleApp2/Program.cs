@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using MysqlEntityFarmework;
 
 namespace ConsoleApp2
 {
@@ -126,16 +128,46 @@ namespace ConsoleApp2
         public static void Main(string[] args)
         {
             //通过子类实例化父类
-            a A = new b();
+            //a A = new b();
             //实例化子类
-            b B = new b();
+            //b B = new b();
             //调用父类方法
-            string abc = A.ss();
+            //string abc = A.ss();
 
             //B.BubbleSort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
             //B.Sort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
+            //B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
 
-            B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
+            using (var db = new MyContext())
+            {
+
+                var user = new User { Name = "Yuuko" };
+                db.Add(user);
+
+                var blog1 = new Blog
+                {
+                    Title = "",
+                    UserId = user.UserId,
+                    Tags = new List<string>() { "ASP.NET Core", "MySQL", "Pomelo" }
+                };
+                db.Add(blog1);
+
+                var blog2 = new Blog
+                {
+                    Title = "Title #2",
+                    UserId = user.UserId,
+                    Tags = new List<string>() { "ASP.NET Core", "MySQL" }
+                };
+                db.Add(blog2);
+                db.SaveChanges();
+
+                blog1.Tags.Object.Clear();
+                db.SaveChanges();
+
+                blog1.Tags.Object.Add("Pomelo");
+                db.SaveChanges();
+
+            }
 
             Console.ReadKey();
 
