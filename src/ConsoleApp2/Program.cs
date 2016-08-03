@@ -138,36 +138,7 @@ namespace ConsoleApp2
             //B.Sort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
             //B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
 
-            using (var db = new MyContext())
-            {
-
-                var user = new User { Name = "Yuuko" };
-                db.Add(user);
-
-                var blog1 = new Blog
-                {
-                    Title = "",
-                    UserId = user.UserId,
-                    Tags = new List<string>() { "ASP.NET Core", "MySQL", "Pomelo" }
-                };
-                db.Add(blog1);
-
-                var blog2 = new Blog
-                {
-                    Title = "Title #2",
-                    UserId = user.UserId,
-                    Tags = new List<string>() { "ASP.NET Core", "MySQL" }
-                };
-                db.Add(blog2);
-                db.SaveChanges();
-
-                blog1.Tags.Object.Clear();
-                db.SaveChanges();
-
-                blog1.Tags.Object.Add("Pomelo");
-                db.SaveChanges();
-
-            }
+            SampleData.InitDB();
 
             Console.ReadKey();
 

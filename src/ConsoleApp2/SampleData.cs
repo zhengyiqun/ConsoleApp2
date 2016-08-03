@@ -1,52 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MysqlEntityFarmework;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
-using System.IO;
-using Newtonsoft.Json.Linq;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace ConsoleApp2
 {
     public class SampleData
     {
-        public async static Task InitDB(IServiceProvider service)
+        public static void InitDB()
         {
-            var context = service.GetService<MyContext>();
-
-            if (context.Database != null && context.Database.EnsureCreated())
+            using (var context = new MyContext())
             {
-                var user = new User { Name = "Yuuko" };
-                context.Add(user);
+                bool bl = context.Database.EnsureCreated();
+                //var context = service.GetService<MyContext>();
 
-                var blog1 = new Blog
+                if (context.Database != null && context.Database.EnsureCreated())
                 {
-                    Title = "",
-                    UserId = user.UserId,
-                    Tags = new List<string>() { "ASP.NET Core", "MySQL", "Pomelo" }
-                };
-                context.Add(blog1);
+                    var user = new User { Name = "Yuuko" };
+                    context.Add(user);
 
-                var blog2 = new Blog
-                {
-                    Title = "Title #2",
-                    UserId = user.UserId,
-                    Tags = new List<string>() { "ASP.NET Core", "MySQL" }
-                };
-                context.Add(blog2);
-                context.SaveChanges();
+                    var blog1 = new Blog
+                    {
+                        Title = "",
+                        UserId = user.UserId,
+                        Tags = new List<string>() { "ASP.NET Core", "MySQL", "Pomelo" }
+                    };
+                    context.Add(blog1);
 
-                blog1.Tags.Object.Clear();
-                context.SaveChanges();
+                    var blog2 = new Blog
+                    {
+                        Title = "Title #2",
+                        UserId = user.UserId,
+                        Tags = new List<string>() { "ASP.NET Core", "MySQL" }
+                    };
+                    context.Add(blog2);
+                    context.SaveChanges();
 
-                blog1.Tags.Object.Add("Pomelo");
-                context.SaveChanges();
+                    blog1.Tags.Object.Clear();
+                    context.SaveChanges();
+
+                    blog1.Tags.Object.Add("Pomelo");
+                    context.SaveChanges();
+                }
             }
-            await context.SaveChangesAsync();
         }
     }
 }
