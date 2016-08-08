@@ -138,6 +138,10 @@ namespace ConsoleApp2
             //B.Sort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
             //B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
 
+
+
+
+
             SampleData.InitDB();
 
             Console.ReadKey();
