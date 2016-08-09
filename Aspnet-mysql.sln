@@ -10,15 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestProject", "src\ConsoleApp2\TestProject.xproj", "{464B2C29-32AA-4683-A51D-2BCA2B5C5E7B}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestProject", "src\TestProject\TestProject.xproj", "{464B2C29-32AA-4683-A51D-2BCA2B5C5E7B}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MysqlEntityFarmework", "src\MysqlEntityFarmework\MysqlEntityFarmework.xproj", "{3894D5F3-8265-4316-915E-D2C2F25C506E}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "aspnet-mysql", "src\aspnet-mysql\aspnet-mysql.xproj", "{2F9D030E-CDE7-467F-B229-AFD2D4363F4E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TodoApi", "TodoApi\TodoApi.xproj", "{E1A11B14-24BD-4DAF-8C6E-8B0D1E614F5A}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TodoApi", "src\TodoApi\TodoApi.xproj", "{E1A11B14-24BD-4DAF-8C6E-8B0D1E614F5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDI", "ConsoleApplication1\TestDI.csproj", "{456E5DCC-42FE-4316-8E48-861BC474CDA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDI", "src\TestDI\TestDI.csproj", "{456E5DCC-42FE-4316-8E48-861BC474CDA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
