@@ -5,7 +5,7 @@ using MysqlEntityFarmework;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace ConsoleApp2
+namespace TestProject
 {
     public class SampleData
     {

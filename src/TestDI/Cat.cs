@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace TestDI
 {
     public interface IFoo { }
 

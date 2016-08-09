@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MysqlEntityFarmework;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace ConsoleApp2
+namespace TestProject
 {
     //枚举类
     public enum Gender
@@ -137,9 +138,6 @@ namespace ConsoleApp2
             //B.BubbleSort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
             //B.Sort(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
             //B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
-
-
-
 
 
             SampleData.InitDB();
