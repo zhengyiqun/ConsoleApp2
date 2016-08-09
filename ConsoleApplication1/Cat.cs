@@ -15,33 +15,47 @@ namespace ConsoleApplication1
 
     public interface IQux { }
 
+    [AttributeUsage(AttributeTargets.Constructor |
+                    AttributeTargets.Property |
+                    AttributeTargets.Method,
+                    AllowMultiple = false)]
+    public class InjectionAttribute : Attribute { }
+
 
     public class Foo : IFoo
     {
         public IBar Bar { get; private set; }
 
+        /// <summary>
+        /// 属性注入
+        /// </summary>
         [Injection]
         public IBaz Baz { get; set; }
 
+        public Foo() { }
+
+        /// <summary>
+        /// 构造器注入
+        /// </summary>
+        /// <param name="bar"></param>
+        [Injection]
         public Foo(IBar bar)
         {
-            this.Bar = bar;
+            Bar = bar;
         }
     }
-
-    [AttributeUsage(AttributeTargets.Constructor|
-                    AttributeTargets.Property|
-                    AttributeTargets.Method, 
-                    AllowMultiple = false)]
-    public class InjectionAttribute : Attribute{}
 
     public class Bar : IBar { }
 
     public class Baz : IBaz
     {
-
         public IQux Qux { get; private set; }
 
+        /// <summary>
+        /// 方法注入
+        /// </summary>
+        /// <param name="qux"></param>
+        [Injection]
         public void Initialize(IQux qux)
         {
             this.Qux = qux;
