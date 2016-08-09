@@ -12,6 +12,7 @@ namespace ConsoleApplication1
         {
             Cat cat = new Cat();
 
+            //注册
             cat.Register<IFoo, Foo>();
             cat.Register<IBar, Bar>();
             cat.Register<IBaz, Baz>();
