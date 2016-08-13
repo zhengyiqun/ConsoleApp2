@@ -140,10 +140,57 @@ namespace TestProject
             //B.Sort2(new int[] { 1, 5, 3, 6, 10, 55, 9, 2, 87, 12, 34, 75, 33, 47 });
 
 
-            SampleData.InitDB();
+            //SampleData.InitDB();
+
+            IServiceCollection services = new ServiceCollection()
+                                        .AddSingleton<IFoo, Foo>()
+                                        .AddSingleton<IBar>(new Bar())
+                                        .AddSingleton<IBaz>(_ => new Baz())
+                                        .AddSingleton<IGux, Gux>();
+
+            IServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            Console.WriteLine("serviceProvider.GetService<IFoo>(): {0}", serviceProvider.GetService<IFoo>());
+            Console.WriteLine("serviceProvider.GetService<IBar>(): {0}", serviceProvider.GetService<IBar>());
+            Console.WriteLine("serviceProvider.GetService<IBaz>(): {0}", serviceProvider.GetService<IBaz>());
+            Console.WriteLine("serviceProvider.GetService<IGux>(): {0}", serviceProvider.GetService<IGux>());
 
             Console.ReadKey();
 
         }
     }
+
+    #region Initialization DI
+
+    public interface IFoo { }
+
+    public interface IBar { }
+
+    public interface IBaz { }
+
+    public interface IGux
+    {
+        IFoo Foo { get; }
+        IBar Bar { get; }
+        IBaz Baz { get; }
+    }
+
+    public class Foo : IFoo { }
+    public class Bar : IBar { }
+    public class Baz : IBaz { }
+    public class Gux : IGux
+    {
+        public IFoo Foo { get; set; }
+        public IBar Bar { get; set; }
+        public IBaz Baz { get; set; }
+
+        public Gux(IFoo foo, IBar bar, IBaz baz)
+        {
+            Foo = foo;
+            Bar = bar;
+            Baz = baz;
+        }
+    }
+
+    #endregion
 }
